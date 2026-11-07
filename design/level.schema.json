@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://eye-challenge.local/schema/level.schema.json",
+  "title": "EyeChallengeLevel",
+  "description": "眼力大挑战单个关卡的数据契约。所有坐标均为归一化值（0..1），以图片左上角为原点，与分辨率无关。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "schemaVersion",
+    "title",
+    "status",
+    "imageA",
+    "imageB",
+    "diffCount",
+    "diffs",
+    "difficulty",
+    "timeLimit"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^lv-[a-z0-9]{3,16}$",
+      "description": "关卡唯一 ID，形如 lv-001。全库不得重复。"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "数据契约版本。升级 schema 时必须同步升此值，便于批量迁移。"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "关卡标题，展示给玩家。"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "published", "archived"],
+      "description": "生产线状态。只有 published 允许进入正式包体。"
+    },
+    "imageA": { "$ref": "#/definitions/image" },
+    "imageB": { "$ref": "#/definitions/image" },
+
+    "diffCount": {
+      "type": "integer",
+      "minimum": 3,
+      "maximum": 12,
+      "description": "差异总数。必须等于 diffs.length，校验脚本会强校验。"
+    },
+    "diffs": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 12,
+      "items": { "$ref": "#/definitions/diff" }
+    },
+
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "1=送分 5=地狱。用于大厅排序与解锁顺序。"
+    },
+    "timeLimit": {
+      "type": "integer",
+      "minimum": 15,
+      "maximum": 600,
+      "description": "限时秒数。"
+    },
+
+    "hints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "count": { "type": "integer", "minimum": 0, "maximum": 10, "default": 3 },
+        "cooldownSec": { "type": "integer", "minimum": 0, "maximum": 120, "default": 15 },
+        "scorePenaltyPct": { "type": "integer", "minimum": 0, "maximum": 100, "default": 10 }
+      }
+    },
+
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "base": { "type": "integer", "minimum": 0, "default": 100 },
+        "perSecondLeft": { "type": "number", "minimum": 0, "default": 1 },
+        "perMissPenalty": { "type": "number", "minimum": 0, "default": 1 },
+        "starThresholds": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3,
+          "description": "三星 / 二星 / 一星 的最低得分线，必须降序。"
+        }
+      }
+    },
+
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aspectRatio": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "宽/高。渲染时必须使用，避免图片加载后布局跳动。"
+        },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "altText": { "type": "string", "maxLength": 200 }
+      }
+    },
+
+    "verification": {
+      "type": "object",
+      "description": "素材流水线的自动质检结果。published 状态要求 passed=true。",
+      "additionalProperties": false,
+      "required": ["passed"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "detectedDiffs": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "OpenCV 自动 diff 实际检出的差异区块数。"
+        },
+        "matchedDiffs": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "检出的区块中能与 diffs[] 一一对上的数量。"
+        },
+        "minRegionAreaPct": {
+          "type": "number",
+          "minimum": 0,
+          "description": "最小差异区块占画面百分比，用于防止差异过小看不见。"
+        },
+        "checkedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 16 },
+      "maxItems": 8
+    },
+    "author": { "type": "string", "maxLength": 40 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  },
+
+  "definitions": {
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src"],
+      "properties": {
+        "src": {
+          "type": "string",
+          "minLength": 1,
+          "description": "相对路径或 CDN URL。禁止绝对本地路径。"
+        },
+        "hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256，用于缓存与完整性校验。"
+        }
+      }
+    },
+
+    "diff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "x", "y", "r", "hint"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^d[0-9]{1,2}$",
+          "description": "关内唯一，形如 d1。"
+        },
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "差异中心 X 归一化坐标。"
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "差异中心 Y 归一化坐标。"
+        },
+        "r": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.25,
+          "description": "判定半径（归一化，相对图宽）。建议 0.03–0.08。"
+        },
+        "hint": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20,
+          "description": "提示文案，如“左下角的猫尾巴”。"
+        },
+        "altText": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "差异的自然语言描述，用于无障碍播报与答对后讲解。"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["added", "removed", "moved", "recolored", "resized"],
+          "description": "差异类型，决定讲解文案模板。"
+        }
+      }
+    }
+  }
+}

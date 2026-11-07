@@ -1,0 +1,105 @@
+/* ============================================================
+   大厅：关卡选择 + 星级
+   为什么单独一段：collect.css 只管模式二本体，
+   选关属于通用 UI，放 app.css 更符合分层。
+   ============================================================ */
+
+.ec-levels {
+  margin-top: var(--ec-space-9);
+}
+
+.ec-levels__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--ec-space-4);
+  margin-bottom: var(--ec-space-5);
+}
+
+.ec-levels__title {
+  margin: 0;
+  font-size: var(--ec-fs-lg);
+  line-height: var(--ec-lh-lg);
+  font-weight: var(--ec-fw-semibold);
+}
+
+.ec-levels__sum {
+  font-family: var(--ec-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--ec-fs-sm);
+  color: var(--ec-text-muted);
+  white-space: nowrap;
+}
+
+.ec-levels__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: var(--ec-space-4);
+}
+
+.ec-level {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ec-space-2);
+  padding: var(--ec-space-4);
+  border: 1px solid var(--ec-border-subtle);
+  border-radius: var(--ec-radius-xl);
+  background: var(--ec-bg-surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--ec-dur-base) var(--ec-ease-standard),
+              transform var(--ec-dur-base) var(--ec-ease-standard),
+              background var(--ec-dur-base) var(--ec-ease-standard);
+}
+.ec-level:hover {
+  border-color: var(--ec-accent);
+  background: var(--ec-bg-elevated);
+  transform: translateY(-2px);
+}
+.ec-level:active { transform: translateY(0) scale(0.99); }
+
+.ec-level[data-cleared='true'] { border-color: var(--ec-success); }
+
+.ec-level__no {
+  font-family: var(--ec-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--ec-fs-xs);
+  color: var(--ec-text-muted);
+  letter-spacing: var(--ec-letter-wide);
+}
+
+.ec-level__name {
+  font-size: var(--ec-fs-base);
+  line-height: var(--ec-lh-base);
+  font-weight: var(--ec-fw-semibold);
+  margin: 0;
+}
+
+.ec-level__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--ec-space-2);
+  font-size: var(--ec-fs-xs);
+  color: var(--ec-text-muted);
+}
+
+.ec-level__stars {
+  display: flex;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: var(--ec-space-2);
+}
+.ec-level__stars svg { width: 14px; height: 14px; display: block; }
+
+.ec-level__diff {
+  display: flex;
+  gap: 3px;
+}
+.ec-level__diff i {
+  width: 4px;
+  height: 10px;
+  border-radius: 1px;
+  background: var(--ec-border-default);
+}
+.ec-level__diff i[data-on='true'] { background: var(--ec-accent); }

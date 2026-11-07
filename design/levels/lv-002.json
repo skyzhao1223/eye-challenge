@@ -1,0 +1,101 @@
+{
+  "id": "lv-002",
+  "schemaVersion": "1.0.0",
+  "title": "午后咖啡店",
+  "status": "published",
+  "imageA": {
+    "src": "assets/lv-002/a.webp",
+    "hash": "655a6a330de77dd2e71a3844e35b949784badba9a438c48907a7d1280e0bb55a"
+  },
+  "imageB": {
+    "src": "assets/lv-002/b.webp",
+    "hash": "d2ccba3a6b3a95b1fea844668e7847ef8d1a1f4dd5e992b28f0307ce512af858"
+  },
+  "diffCount": 5,
+  "diffs": [
+    {
+      "id": "d1",
+      "x": 0.8709,
+      "y": 0.8489,
+      "r": 0.0747,
+      "hint": "右侧",
+      "altText": "这个位置的东西不见了",
+      "kind": "removed"
+    },
+    {
+      "id": "d2",
+      "x": 0.1472,
+      "y": 0.237,
+      "r": 0.0544,
+      "hint": "左上角",
+      "altText": "这里颜色变了",
+      "kind": "recolored"
+    },
+    {
+      "id": "d3",
+      "x": 0.4435,
+      "y": 0.3372,
+      "r": 0.0794,
+      "hint": "上方",
+      "altText": "这里大小变了",
+      "kind": "resized"
+    },
+    {
+      "id": "d4",
+      "x": 0.6288,
+      "y": 0.8169,
+      "r": 0.1154,
+      "hint": "下方",
+      "altText": "这里位置挪动了",
+      "kind": "moved"
+    },
+    {
+      "id": "d5",
+      "x": 0.4227,
+      "y": 0.6418,
+      "r": 0.1153,
+      "hint": "中间",
+      "altText": "这个位置多了一样东西",
+      "kind": "added"
+    }
+  ],
+  "difficulty": 2,
+  "timeLimit": 100,
+  "hints": {
+    "count": 3,
+    "cooldownSec": 15,
+    "scorePenaltyPct": 10
+  },
+  "scoring": {
+    "base": 250,
+    "perSecondLeft": 2,
+    "perMissPenalty": 2,
+    "starThresholds": [
+      362,
+      287,
+      212
+    ]
+  },
+  "assets": {
+    "aspectRatio": 1.5,
+    "width": 1920,
+    "height": 1280,
+    "altText": "午后阳光照进的街角咖啡店，木吧台、吊灯、窗台绿植、墙上的画框"
+  },
+  "verification": {
+    "passed": true,
+    "detectedDiffs": 68715,
+    "matchedDiffs": 5,
+    "minRegionAreaPct": 2.796,
+    "weakestStrength": 50.6,
+    "checkedAt": "2026-11-07T13:15:14+08:00"
+  },
+  "tags": [
+    "室内",
+    "咖啡店",
+    "入门"
+  ],
+  "author": "sky",
+  "createdAt": "2026-11-07T13:15:14+08:00",
+  "updatedAt": "2026-11-07T13:15:14+08:00"
+}

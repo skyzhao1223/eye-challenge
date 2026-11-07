@@ -1,0 +1,65 @@
+{
+  "title": "街角咖啡店",
+  "width": 2048,
+  "height": 1365,
+  "aspectRatio": 1.5004,
+  "diffCount": 5,
+  "diffs": [
+    {
+      "id": "d1",
+      "x": 0.8417,
+      "y": 0.4711,
+      "r": 0.0666,
+      "hint": "第 1 处",
+      "altText": "这个位置的东西不见了",
+      "kind": "removed",
+      "strength": 93.3
+    },
+    {
+      "id": "d2",
+      "x": 0.5234,
+      "y": 0.131,
+      "r": 0.0558,
+      "hint": "第 2 处",
+      "altText": "这里颜色变了",
+      "kind": "recolored",
+      "strength": 102.3
+    },
+    {
+      "id": "d3",
+      "x": 0.6048,
+      "y": 0.7304,
+      "r": 0.0669,
+      "hint": "第 3 处",
+      "altText": "这里大小变了",
+      "kind": "resized",
+      "strength": 97.2
+    },
+    {
+      "id": "d4",
+      "x": 0.8849,
+      "y": 0.7194,
+      "r": 0.1001,
+      "hint": "第 4 处",
+      "altText": "这里位置挪动了",
+      "kind": "moved",
+      "strength": 89.5
+    },
+    {
+      "id": "d5",
+      "x": 0.1396,
+      "y": 0.7483,
+      "r": 0.0595,
+      "hint": "第 5 处",
+      "altText": "这个位置多了一样东西",
+      "kind": "added",
+      "strength": 130.4
+    }
+  ],
+  "selfCheck": {
+    "changedPixels": 55657,
+    "changedPct": 1.991,
+    "hotspotCoveragePct": 99.66,
+    "weakestStrength": 89.5
+  }
+}

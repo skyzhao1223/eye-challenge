@@ -1,0 +1,65 @@
+{
+  "title": "午后咖啡店",
+  "width": 1920,
+  "height": 1280,
+  "aspectRatio": 1.5,
+  "diffCount": 5,
+  "diffs": [
+    {
+      "id": "d1",
+      "x": 0.8709,
+      "y": 0.8489,
+      "r": 0.0747,
+      "hint": "第 1 处",
+      "altText": "这个位置的东西不见了",
+      "kind": "removed",
+      "strength": 64.7
+    },
+    {
+      "id": "d2",
+      "x": 0.1472,
+      "y": 0.237,
+      "r": 0.0544,
+      "hint": "第 2 处",
+      "altText": "这里颜色变了",
+      "kind": "recolored",
+      "strength": 50.6
+    },
+    {
+      "id": "d3",
+      "x": 0.4435,
+      "y": 0.3372,
+      "r": 0.0794,
+      "hint": "第 3 处",
+      "altText": "这里大小变了",
+      "kind": "resized",
+      "strength": 67.1
+    },
+    {
+      "id": "d4",
+      "x": 0.6288,
+      "y": 0.8169,
+      "r": 0.1154,
+      "hint": "第 4 处",
+      "altText": "这里位置挪动了",
+      "kind": "moved",
+      "strength": 111.2
+    },
+    {
+      "id": "d5",
+      "x": 0.4227,
+      "y": 0.6418,
+      "r": 0.1153,
+      "hint": "第 5 处",
+      "altText": "这个位置多了一样东西",
+      "kind": "added",
+      "strength": 109.1
+    }
+  ],
+  "selfCheck": {
+    "changedPixels": 68715,
+    "changedPct": 2.796,
+    "hotspotCoveragePct": 90.67,
+    "weakestStrength": 50.6
+  }
+}

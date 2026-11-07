@@ -1,0 +1,194 @@
+/* ============================================================
+   Eye Challenge — Design Tokens (CSS Custom Properties)
+   ⚠️ 本文件由 tokens.json 派生，唯一真相源是 tokens.json。
+   重新生成：node tools/gen-tokens.js
+   业务样式只允许 var(--ec-*)，禁止硬编码颜色/尺寸。
+   ============================================================ */
+
+:root {
+  /* ---------- 背景 ---------- */
+  --ec-bg-base:     #0B0E14;
+  --ec-bg-surface:  #12161F;
+  --ec-bg-elevated:  #1A2030;
+  --ec-bg-sunken:   #242C3D;
+
+  /* ---------- 描边 ---------- */
+  --ec-border-subtle:  #242C3D;
+  --ec-border-default:  #39435A;
+  --ec-border-strong:  #5A6785;
+
+  /* ---------- 文字 ---------- */
+  --ec-text-primary:   #EDF1F8;
+  --ec-text-secondary:  #8B97B0;
+  --ec-text-muted:     #5A6785;
+  --ec-text-disabled:  #39435A;
+  --ec-text-inverse:   #0B0E14;
+
+  /* ---------- 主色（琥珀金） ---------- */
+  --ec-accent:           #FFB020;
+  --ec-accent-hover:     #FFC552;
+  --ec-accent-pressed:   #E09400;
+  --ec-accent-on:        #1A1200;
+  --ec-accent-subtle-bg:  #3A2A00;
+
+  /* ---------- 状态色 ---------- */
+  --ec-success:    #3DD68C;
+  --ec-success-bg:  #0A2E1E;
+  --ec-danger:     #FF5A5F;
+  --ec-danger-bg:  #3A1214;
+  --ec-warning:    #FFB020;
+  --ec-info:       #35D0E0;
+  --ec-info-bg:    #08303A;
+  --ec-focus-ring:  #35D0E0;
+
+  /* ---------- 游戏专用 ---------- */
+  --ec-diff-found:            #3DD68C;
+  --ec-diff-miss:             #FF5A5F;
+  --ec-diff-hint:             #FFB020;
+  --ec-diff-unfound:          rgba(255,176,32,0.35);
+  --ec-hud-bg:                rgba(18,22,31,0.82);
+  --ec-hud-border:            rgba(57,67,90,0.6);
+  --ec-scrim:                 rgba(11,14,20,0.72);
+  --ec-btn-primary-bg:        #FFB020;
+  --ec-btn-primary-bg-hover:  #FFC552;
+  --ec-btn-primary-bg-active:  #E09400;
+  --ec-btn-primary-fg:        #1A1200;
+  --ec-btn-ghost-fg:          #8B97B0;
+  --ec-btn-ghost-bg-hover:    #242C3D;
+
+  /* ---------- 字体 ---------- */
+  --ec-font-sans:     "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans SC", -apple-system, system-ui, sans-serif;
+  --ec-font-mono:     "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --ec-fs-xs:         12px;
+  --ec-lh-xs:         16px;
+  --ec-fs-sm:         14px;
+  --ec-lh-sm:         20px;
+  --ec-fs-base:       16px;
+  --ec-lh-base:       24px;
+  --ec-fs-lg:         20px;
+  --ec-lh-lg:         28px;
+  --ec-fs-xl:         24px;
+  --ec-lh-xl:         32px;
+  --ec-fs-2xl:        32px;
+  --ec-lh-2xl:        40px;
+  --ec-fs-3xl:        40px;
+  --ec-lh-3xl:        48px;
+  --ec-fs-timer:      56px;
+  --ec-lh-timer:      56px;
+  --ec-letter-tight:  -0.01em;
+  --ec-letter-normal:  0;
+  --ec-letter-wide:   0.04em;
+  --ec-fw-regular:    400;
+  --ec-fw-medium:     500;
+  --ec-fw-semibold:   600;
+  --ec-fw-bold:       700;
+
+  /* ---------- 间距（4 的倍数） ---------- */
+  --ec-space-0:  0;
+  --ec-space-1:  2px;
+  --ec-space-2:  4px;
+  --ec-space-3:  8px;
+  --ec-space-4:  12px;
+  --ec-space-5:  16px;
+  --ec-space-6:  20px;
+  --ec-space-7:  24px;
+  --ec-space-8:  32px;
+  --ec-space-9:  40px;
+  --ec-space-10:  48px;
+  --ec-space-11:  64px;
+
+  /* ---------- 圆角 ---------- */
+  --ec-radius-none:  0;
+  --ec-radius-sm:   4px;
+  --ec-radius-md:   8px;
+  --ec-radius-lg:   12px;
+  --ec-radius-xl:   16px;
+  --ec-radius-2xl:  24px;
+  --ec-radius-full:  999px;
+
+  /* ---------- 阴影 ---------- */
+  --ec-shadow-sm:   0 1px 2px rgba(0,0,0,0.32);
+  --ec-shadow-md:   0 4px 12px rgba(0,0,0,0.38);
+  --ec-shadow-lg:   0 12px 32px rgba(0,0,0,0.48);
+  --ec-shadow-glow:  0 0 24px rgba(255,176,32,0.45);
+
+  /* ---------- 动效 ---------- */
+  --ec-dur-instant:   80ms;
+  --ec-dur-fast:      120ms;
+  --ec-dur-base:      200ms;
+  --ec-dur-slow:      320ms;
+  --ec-dur-slower:    480ms;
+  --ec-ease-standard:  cubic-bezier(0.2, 0, 0, 1);
+  --ec-ease-enter:    cubic-bezier(0, 0, 0, 1);
+  --ec-ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+  --ec-ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---------- 层级 ---------- */
+  --ec-z-canvas:  10;
+  --ec-z-hud:     100;
+  --ec-z-overlay:  200;
+  --ec-z-modal:   300;
+  --ec-z-toast:   400;
+
+  /* ---------- 布局 ---------- */
+  --ec-touch-min:   44px;
+  --ec-content-max:  1440px;
+  --ec-hud-height:  64px;
+}
+
+
+
+/* ---------- 基础重置（最小集，其余交给项目 reset） ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--ec-bg-base);
+  color: var(--ec-text-primary);
+  font-family: var(--ec-font-sans);
+  font-size: var(--ec-fs-base);
+  line-height: var(--ec-lh-base);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 倒计时/分数必须等宽，否则数字跳动会抖 */
+.ec-numeric {
+  font-family: var(--ec-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* 全局焦点环（键盘可达性） */
+:focus-visible {
+  outline: 2px solid var(--ec-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--ec-radius-sm);
+}
+
+/* 禁止文本选中，避免拖拽图案时选中文字 */
+.ec-no-select {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* ---------- 无障碍：尊重系统减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ec-dur-instant: 0ms;
+    --ec-dur-fast:    0ms;
+    --ec-dur-base:    0ms;
+    --ec-dur-slow:    0ms;
+    --ec-dur-slower:  0ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

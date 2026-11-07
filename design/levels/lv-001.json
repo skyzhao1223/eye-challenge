@@ -1,0 +1,101 @@
+{
+  "id": "lv-001",
+  "schemaVersion": "1.0.0",
+  "title": "街角咖啡店",
+  "status": "published",
+  "imageA": {
+    "src": "assets/lv-001/a.webp",
+    "hash": "bdabc6ea36d1ddd5d816246fb71b9467541749830bd5bd789958d75d648a640e"
+  },
+  "imageB": {
+    "src": "assets/lv-001/b.webp",
+    "hash": "b3eb0c7e0756f53f32f83fb4a687ca8417d2f883e3a657ce34012c03cd244a8f"
+  },
+  "diffCount": 5,
+  "diffs": [
+    {
+      "id": "d1",
+      "x": 0.8417,
+      "y": 0.4711,
+      "r": 0.0666,
+      "hint": "右侧",
+      "altText": "这个位置的东西不见了",
+      "kind": "removed"
+    },
+    {
+      "id": "d2",
+      "x": 0.5234,
+      "y": 0.131,
+      "r": 0.0558,
+      "hint": "上方",
+      "altText": "这里颜色变了",
+      "kind": "recolored"
+    },
+    {
+      "id": "d3",
+      "x": 0.6048,
+      "y": 0.7304,
+      "r": 0.0669,
+      "hint": "下方",
+      "altText": "这里大小变了",
+      "kind": "resized"
+    },
+    {
+      "id": "d4",
+      "x": 0.8849,
+      "y": 0.7194,
+      "r": 0.1001,
+      "hint": "右下角",
+      "altText": "这里位置挪动了",
+      "kind": "moved"
+    },
+    {
+      "id": "d5",
+      "x": 0.1396,
+      "y": 0.7483,
+      "r": 0.0595,
+      "hint": "左下角",
+      "altText": "这个位置多了一样东西",
+      "kind": "added"
+    }
+  ],
+  "difficulty": 2,
+  "timeLimit": 100,
+  "hints": {
+    "count": 3,
+    "cooldownSec": 15,
+    "scorePenaltyPct": 10
+  },
+  "scoring": {
+    "base": 250,
+    "perSecondLeft": 2,
+    "perMissPenalty": 2,
+    "starThresholds": [
+      362,
+      287,
+      212
+    ]
+  },
+  "assets": {
+    "aspectRatio": 1.5,
+    "width": 1920,
+    "height": 1280,
+    "altText": "午后阳光照进的街角咖啡店，木吧台、吊灯、窗台绿植、墙上的画框"
+  },
+  "verification": {
+    "passed": true,
+    "detectedDiffs": 55657,
+    "matchedDiffs": 5,
+    "minRegionAreaPct": 1.991,
+    "weakestStrength": 89.5,
+    "checkedAt": "2026-11-07T14:43:15+08:00"
+  },
+  "tags": [
+    "室内",
+    "咖啡店",
+    "入门"
+  ],
+  "author": "sky",
+  "createdAt": "2026-11-07T14:43:15+08:00",
+  "updatedAt": "2026-11-07T14:43:15+08:00"
+}

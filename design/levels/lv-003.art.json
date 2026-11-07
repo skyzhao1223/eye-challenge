@@ -1,0 +1,75 @@
+{
+  "title": "深夜书房",
+  "width": 1920,
+  "height": 1280,
+  "aspectRatio": 1.5,
+  "diffCount": 6,
+  "diffs": [
+    {
+      "id": "d1",
+      "x": 0.3016,
+      "y": 0.3012,
+      "r": 0.0824,
+      "hint": "第 1 处",
+      "altText": "这个位置的东西不见了",
+      "kind": "removed",
+      "strength": 62.0
+    },
+    {
+      "id": "d2",
+      "x": 0.269,
+      "y": 0.7453,
+      "r": 0.0535,
+      "hint": "第 2 处",
+      "altText": "这里颜色变了",
+      "kind": "recolored",
+      "strength": 168.0
+    },
+    {
+      "id": "d3",
+      "x": 0.5174,
+      "y": 0.5617,
+      "r": 0.0673,
+      "hint": "第 3 处",
+      "altText": "这里大小变了",
+      "kind": "resized",
+      "strength": 113.3
+    },
+    {
+      "id": "d4",
+      "x": 0.5472,
+      "y": 0.1906,
+      "r": 0.1096,
+      "hint": "第 4 处",
+      "altText": "这里位置挪动了",
+      "kind": "moved",
+      "strength": 42.5
+    },
+    {
+      "id": "d5",
+      "x": 0.6251,
+      "y": 0.4708,
+      "r": 0.0473,
+      "hint": "第 5 处",
+      "altText": "这个位置多了一样东西",
+      "kind": "added",
+      "strength": 131.5
+    },
+    {
+      "id": "d6",
+      "x": 0.8822,
+      "y": 0.4968,
+      "r": 0.0484,
+      "hint": "第 6 处",
+      "altText": "这里颜色变了",
+      "kind": "recolored",
+      "strength": 81.5
+    }
+  ],
+  "selfCheck": {
+    "changedPixels": 47980,
+    "changedPct": 1.952,
+    "hotspotCoveragePct": 100.0,
+    "weakestStrength": 42.5
+  }
+}

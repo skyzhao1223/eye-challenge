@@ -1,0 +1,110 @@
+{
+  "id": "lv-003",
+  "schemaVersion": "1.0.0",
+  "title": "深夜书房",
+  "status": "published",
+  "imageA": {
+    "src": "assets/lv-003/a.webp",
+    "hash": "df37282f59cb54853eea5b81b3eb6a9482b65c368eab50197909e9b4e62ca16f"
+  },
+  "imageB": {
+    "src": "assets/lv-003/b.webp",
+    "hash": "c1a50baeddc37ce90ccfdf2b899ed69957bd9f4b3b85aa9f60636e99fdc303ed"
+  },
+  "diffCount": 6,
+  "diffs": [
+    {
+      "id": "d1",
+      "x": 0.3016,
+      "y": 0.3012,
+      "r": 0.0824,
+      "hint": "左上角",
+      "altText": "这个位置的东西不见了",
+      "kind": "removed"
+    },
+    {
+      "id": "d2",
+      "x": 0.269,
+      "y": 0.7453,
+      "r": 0.0535,
+      "hint": "左侧",
+      "altText": "这里颜色变了",
+      "kind": "recolored"
+    },
+    {
+      "id": "d3",
+      "x": 0.5174,
+      "y": 0.5617,
+      "r": 0.0673,
+      "hint": "中间",
+      "altText": "这里大小变了",
+      "kind": "resized"
+    },
+    {
+      "id": "d4",
+      "x": 0.5472,
+      "y": 0.1906,
+      "r": 0.1096,
+      "hint": "上方",
+      "altText": "这里位置挪动了",
+      "kind": "moved"
+    },
+    {
+      "id": "d5",
+      "x": 0.6251,
+      "y": 0.4708,
+      "r": 0.0473,
+      "hint": "中间",
+      "altText": "这个位置多了一样东西",
+      "kind": "added"
+    },
+    {
+      "id": "d6",
+      "x": 0.8822,
+      "y": 0.4968,
+      "r": 0.0484,
+      "hint": "右侧",
+      "altText": "这里颜色变了",
+      "kind": "recolored"
+    }
+  ],
+  "difficulty": 3,
+  "timeLimit": 110,
+  "hints": {
+    "count": 3,
+    "cooldownSec": 15,
+    "scorePenaltyPct": 10
+  },
+  "scoring": {
+    "base": 280,
+    "perSecondLeft": 2,
+    "perMissPenalty": 2,
+    "starThresholds": [
+      406,
+      322,
+      238
+    ]
+  },
+  "assets": {
+    "aspectRatio": 1.5,
+    "width": 1920,
+    "height": 1280,
+    "altText": "暖光下的书房，高书架、木书桌、台灯、靠窗的扶手椅"
+  },
+  "verification": {
+    "passed": true,
+    "detectedDiffs": 47980,
+    "matchedDiffs": 6,
+    "minRegionAreaPct": 1.952,
+    "weakestStrength": 42.5,
+    "checkedAt": "2026-11-07T13:15:14+08:00"
+  },
+  "tags": [
+    "室内",
+    "书房",
+    "进阶"
+  ],
+  "author": "sky",
+  "createdAt": "2026-11-07T13:15:14+08:00",
+  "updatedAt": "2026-11-07T13:15:14+08:00"
+}
