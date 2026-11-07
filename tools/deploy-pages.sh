@@ -25,7 +25,10 @@ rm -rf "$WT"
 git worktree add -f --detach "$WT" >/dev/null
 
 pushd "$WT" >/dev/null
-git checkout --orphan "$BRANCH" >/dev/null 2>&1 || true
+# 本地可能已存在 gh-pages 引用，先删掉再建孤儿分支，否则 checkout 会失败、
+# 后续 push 推的还是旧引用（表现为 Everything up-to-date）。
+git branch -D "$BRANCH" >/dev/null 2>&1 || true
+git checkout --orphan "$BRANCH" >/dev/null
 git rm -rf . >/dev/null 2>&1 || true
 cp -R "$ROOT/dist/." .
 touch .nojekyll
