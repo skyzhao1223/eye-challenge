@@ -16,6 +16,7 @@ npm run build        # 产出 dist/
 
 | 入口 | 地址 | 状态 |
 |---|---|---|
+| **公网（GitHub Pages）** | **https://skyzhao1223.github.io/eye-challenge/** | ✅ |
 | 本机 | http://127.0.0.1:8890/ | ✅ |
 | 局域网（手机同 WiFi） | http://192.168.1.20:8890/ | ✅ |
 | `zhaodian.cn` | — | ⛔ 域名无任何 A/CNAME 记录，需先配 DNS |
@@ -24,6 +25,20 @@ nginx 配置：`/opt/homebrew/etc/nginx/servers/eye-challenge.conf`
 日志：`/opt/homebrew/var/log/nginx/eye-challenge.{access,error}.log`
 
 重载：`/opt/homebrew/bin/nginx -t && /opt/homebrew/bin/nginx -s reload`
+
+### 发布到公网
+
+```bash
+npm run deploy       # 构建 dist/ 并推送到 gh-pages 分支
+```
+
+GitHub Pages 源已设为 `gh-pages` 分支（legacy 构建，**不经过 GitHub Actions**）。
+
+> ⚠️ 为什么不用 Actions：账号 `skyzhao1223` 因 billing issue 被锁定，所有 job
+> 在 4~5 秒内失败且 `steps` 为空、日志接口返回 `BlobNotFound`，check-run 注解为
+> `The job was not started because your account is locked due to a billing issue.`
+> 在账单结清前 Actions 无法使用；Pages 的分支构建不受影响，所以走这条路。
+> 原 `.github/workflows/*.yml` 已删除，避免每次 push 产生失败记录。
 
 ## 目录
 
